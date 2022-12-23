@@ -1,0 +1,497 @@
+/** ----- General Styles ----- **/
+
+:root{
+
+    /** ---- Colors ---- **/
+
+        /** --- Primary --- **/
+        --darkBlue-intro: hsl(217, 28%, 15%);
+        --darkBlue-main: hsl(217, 31%, 13%);
+        --darkBlue-footer: hsl(216, 53%, 9%);
+        --darkBlue-testimonials: hsl(219, 30%, 18%);
+
+        /** --- Accent --- **/
+        --cyan: hsl(176, 68%, 64%);
+        --blue: hsl(198, 60%, 50%);
+        --lightRed: hsl(0, 100%, 63%);
+        --gradient: linear-gradient(to right, var(--cyan), var(--blue));
+
+        /** --- Neutral --- **/
+        --white: hsl(0, 0%, 100%);
+
+    /** ---- Fonts ---- **/
+
+        /** --- Headings, Call-to-actions, Header Navigation --- **/
+        --raleway: 'Raleway', sans-serif;
+
+        /** --- Body --- **/
+        --openSans: 'Open Sans', sans-serif;
+
+    /** ---- Container ---- **/
+    --padding-container: 60px 0;
+
+}
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 14px;
+    font-family: var(--openSans);
+    color: var(--white);
+    background-color: var(--darkBlue-main);
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li{
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.head-font{
+    font-family: var(--raleway);
+}
+
+/** ----- Scrollbar ----- **/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darkBlue-testimonials);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--blue), var(--cyan));
+    border-radius: 50px;
+}
+
+/** ----- Header ----- **/
+
+/** ----- Hero ----- **/
+.hero{
+    background-color: var(--darkBlue-intro);
+    position: relative;
+}
+
+.hero__wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background-color: var(--darkBlue-main);
+}
+
+.hero__wave::before{
+    content: "";
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    height: 100px;
+    background-image: url(../images/bg-curvy-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;  
+}
+
+.nav__logo{
+    width: 120px;
+}
+
+.nav__img{
+    display: block;
+}
+
+.nav__link{
+    display: inline-block;
+    margin-left: .9em;
+    font-weight: 400;
+}
+
+.hero__main{
+    display: grid;
+    gap: 1.5em;
+    text-align: center;
+    position: relative;
+}
+
+.nav__link:first-of-type{
+    margin-left: auto;
+}
+
+.hero__img{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.hero__title{
+    margin-top: 1.5em;
+    font-size: 1.5rem;
+}
+
+.hero__paragraph{
+    line-height: 1.5;
+}
+
+.hero__cta{
+    width: 250px;
+    padding: 1em 0;
+    border-radius: 2em;
+    background-image: var(--gradient);
+    font-weight: 700;
+    place-self: center;
+}
+
+/** ----- Main ----- **/
+
+/** ----- About ----- **/
+
+.about{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+
+.about__img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.about__title{
+    margin: 1.5em 0 .5em 0;
+    font-size: 1.2rem;
+}
+
+/** ---- Productive ---- **/
+
+.productive{
+    display: grid;
+    gap: 3em;
+}
+
+.productive__img{
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.productive__title{
+    margin-bottom: .7em;
+}
+
+.productive__paragraph{
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+.productive__cta{
+    display: inline-block;
+    color: var(--cyan);
+    line-height: 2.5;
+    border-bottom: 1px solid var(--cyan);
+}
+
+.productive__arrow{
+    width: max-content;
+    margin-left: .3em;
+    vertical-align: middle;
+}
+
+/** ---- Card ---- **/
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+}
+
+.card__item{
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px -5 rgb(255, 255, 255, .5);
+    background-color: var(--darkBlue-testimonials);
+}
+
+.card__item--first{
+    position: relative;
+}
+
+.card__item--first::before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background-image: url(../images/bg-quotes.png);
+    width: 30px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.card__profile{
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    gap: .8em;
+}
+
+.card__picture{
+    width: 30px;
+    height: 30px;
+}
+
+.card__img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card__paragraph{
+    font-weight: 200;
+}
+
+.card__name{
+    font-size: .9rem;
+}
+
+.card__job{
+    color: #f2fffd;
+}
+
+/** ---- Join ---- **/
+
+.join{
+    background-image: linear-gradient(var(--darkBlue-main) 50%, var(--darkBlue-footer) 50%);
+    padding: 60px 0;
+}
+
+.join__container{
+    background-color: #1a2331;
+    border-radius: 8px;
+    padding: 3em 1.5em;
+    text-align: center;
+}
+
+.join__title{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.join__paragraph{
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+.join__form{
+    display: grid;
+    gap: 1em;
+}
+
+.join__input{
+    padding: 15px 20px;
+    font-family: inherit;
+    border-radius: 30px;
+    border: none;
+}
+
+.join__input--submit{
+    background-image: var(--gradient);
+    color: var(--white);
+    font-family: var(--raleway);
+    font-weight: 700;
+}
+
+/** ----- Footer ----- **/
+
+.footer{
+    background-color: var(--darkBlue-footer);
+}
+
+.footer__items{
+    display: grid;
+    gap: 1em;
+}
+
+.footer__logo{
+    display: block;
+    width: 180px;
+    margin-bottom: 2em;
+}
+
+.footer__contact{
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.footer__contact{
+    margin-bottom: 1em;
+}
+
+.footer__icon{
+    margin-top: 3px;
+    width: fit-content;
+}
+
+.footer__nav{
+    margin-top: 2.5em;
+    display: grid;
+    gap: .8em;
+}
+
+.footer__social{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 4em;
+}
+
+.footer__media{
+    padding: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.footer__media--last{
+    margin-right: none;
+}
+
+.attribution{
+    text-align: center;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+.attribution__link{
+    transition: .3s;
+}
+
+.attribution__link:hover{
+    color: var(--cyan);
+}
+
+/** ----- Responsive for PC ----- **/
+
+@media (min-width:740px){
+    
+    /** ----- Header ----- **/
+
+    /** ----- Hero ----- **/
+
+    .hero__title{
+        font-size: 2.5rem;
+    }
+
+    .nav__link{
+        margin-left: 3em;
+    }
+
+    .hero__wave::before{
+        background: url(../images/bg-curvy-desktop.svg);
+    }
+
+    /** ----- Main ----- **/
+
+    /** ---- About ---- **/
+
+    .about{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .about__item{
+        width: 40%;
+    }
+
+    /** ---- Productive ---- **/
+
+    .productive{
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .productive__title{
+        font-size: 2.5rem;
+        margin-bottom: .6rem;
+    }
+
+    /** ---- Cards ---- **/
+
+    .card{
+        flex-direction: row;
+    }
+
+    /** ---- Join ---- **/
+
+    .join__container{
+        width: 70%;
+    }
+
+    .join__title{
+        font-size: 2rem;
+        margin-bottom: .7em;
+    }
+
+    .join__form{
+        grid-template-columns: 1fr max-content;
+    }
+
+    /** ----- Footer ----- **/
+
+    .footer__items{
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    }
+
+    .footer__nav{
+        margin-top: 0;
+    }
+
+    .footer__social{
+        display: inline-block;
+        margin-top: 0;
+    }
+
+    .footer__media--last{
+        margin: 0;
+    }
+
+}
